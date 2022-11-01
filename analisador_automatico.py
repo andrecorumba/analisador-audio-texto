@@ -10,9 +10,11 @@ import pandas as pd
 
 # Ler vários formatos de arquivo de áudio de uma pasta.
 
-pasta = os.getcwd() + r'/Audio' + r'/'
-lista_arquivos = os.listdir(pasta)
-print(f"Quantidade de aquivos na pasta {pasta}: ", len(lista_arquivos))
+caminho_origem = os.getcwd() + r'/Audio' + r'/'
+caminho_destino = 'Saida/audio_transcrito2.csv'
+
+lista_arquivos = os.listdir(caminho_origem)
+print(f"Quantidade de aquivos na pasta {caminho_origem}: ", len(lista_arquivos))
 print(lista_arquivos)
 
 # Inicializar variáveis e modelo
@@ -28,7 +30,7 @@ lista_transcricoes = []
 
 for arquivo in lista_arquivos:    
     with subprocess.Popen(["ffmpeg", "-loglevel", "quiet", "-i",
-                            pasta + arquivo,
+                            caminho_origem + arquivo,
                             "-ar", str(SAMPLE_RATE) , "-ac", "1", "-f", "s16le", "-"],
                             stdout=subprocess.PIPE) as process:
         transcricao = ' '
@@ -68,5 +70,5 @@ df_filtrado = df_filtrado.rename_axis('arquivo').reset_index() # transformma ind
 
 # Exporta o resultado filtrado para um arquivo csv
 
-df_filtrado.to_csv('Saida/audio_transcrito2.csv', sep=';', encoding='latin-1')
+df_filtrado.to_csv(caminho_destino, sep=';', encoding='latin-1')
 
