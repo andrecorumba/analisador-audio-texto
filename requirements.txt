@@ -11,6 +11,8 @@ bleach==5.0.1
 certifi==2022.9.24
 cffi==1.15.1
 charset-normalizer==2.1.1
+contourpy==1.0.6
+cycler==0.11.0
 debugpy==1.6.3
 decorator==5.1.1
 defusedxml==0.7.1
@@ -19,6 +21,7 @@ et-xmlfile==1.1.0
 executing==1.1.1
 fastjsonschema==2.16.2
 ffprobe==0.5
+fonttools==4.38.0
 idna==3.4
 ipykernel==6.16.2
 ipython==8.5.0
@@ -35,7 +38,9 @@ jupyterlab==3.5.0
 jupyterlab-pygments==0.2.2
 jupyterlab-widgets==3.0.3
 jupyterlab_server==2.16.2
+kiwisolver==1.4.4
 MarkupSafe==2.1.1
+matplotlib==3.6.1
 matplotlib-inline==0.1.6
 mistune==2.0.4
 nbclassic==0.4.7
@@ -53,6 +58,7 @@ pandocfilters==1.5.0
 parso==0.8.3
 pexpect==4.8.0
 pickleshare==0.7.5
+Pillow==9.3.0
 progress==1.6
 prometheus-client==0.15.0
 prompt-toolkit==3.0.31
@@ -87,3 +93,4 @@ webencodings==0.5.1
 websocket-client==1.4.1
 websockets==10.4
 widgetsnbextension==4.0.3
+wordcloud==1.8.2.2
